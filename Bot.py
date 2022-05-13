@@ -24,17 +24,17 @@ class Bot:
     def run(self):
         while True:
             user_input = input("You: ")
-            if user_input == "Bye":
+            if user_input == ("Bye" or "aurevoir"):
                 print("Herobrine: Bye")
                 break
 
             elif self.scrapper.check_recipe(user_input):
-                print("Herobrine: " + " Yes of course here are all the information about the recipe ")
-                print("For the material you need " + self.scrapper.data[self.scrapper.last_recipe][0])
-                print("and here a quick description : " + self.scrapper.data[self.scrapper.last_recipe][2])
+                print("Herobrine: " + " Oui bien sûr, voilà toutes les informations sur la recette :")
+                print("Pour les matériaux tu auras besoin de : " + self.scrapper.data[self.scrapper.last_recipe][0])
+                print("et au cas où tu aurais besoin d'une petite description ;) : " + self.scrapper.data[self.scrapper.last_recipe][2])
                 response = requests.get(self.scrapper.data[self.scrapper.last_recipe][1])
                 Image.open(BytesIO(response.content)).show()
-                print("Also you may need this link to see how to build it : " +
+                print("Tu aurais éventuellement envie de voir comment construire cet objet :" +
                       self.scrapper.data[self.scrapper.last_recipe][1])
 
             else:
