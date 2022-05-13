@@ -28,5 +28,7 @@ Quand l'utilisateur demande une recette une analyse Syntaxique et Phonétique es
 Torche ou encore Torsh est correcte et donnera la bonne recette.
 
 Example de dialogue :  
-![](Capture d’écran 2022-05-13 121705.png)
+
+![](screen_dialogue.png)
+
 Les warnings de Query sont dus à la manière dont fuzzywuzzy traite les donnes de son analyse Syntaxique, mais cela ne change en rien le résultat.
